@@ -36,3 +36,12 @@ body {
     background-color: #ffffff;
   }
 }
+
+todo-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

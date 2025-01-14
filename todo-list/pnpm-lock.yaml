@@ -8,16 +8,22 @@ importers:
 
   .:
     dependencies:
+      '@lit/task':
+        specifier: ^1.0.1
+        version: 1.0.1
       lit:
         specifier: ^3.2.1
         version: 3.2.1
     devDependencies:
+      browser@latest:
+        specifier: link:msw/browser@latest
+        version: link:msw/browser@latest
       typescript:
         specifier: ~5.6.2
         version: 5.6.3
       vite:
         specifier: ^6.0.5
-        version: 6.0.7
+        version: 6.0.7(@types/node@22.10.5)
 
 packages:
 
@@ -177,6 +183,9 @@ packages:
   '@lit/reactive-element@2.0.4':
     resolution: {integrity: sha512-GFn91inaUa2oHLak8awSIigYz0cU0Payr1rcFsrkf5OJ5eSPxElyZfKh0f2p9FsTiZWXQdWGJeXZICEfXXYSXQ==}
 
+  '@lit/task@1.0.1':
+    resolution: {integrity: sha512-fVLDtmwCau8NywnFIXaJxsCZjzaIxnVq+cFRKYC1Y4tA4/0rMTvF6DLZZ2JE51BwzOluaKtgJX8x1QDsQtAaIw==}
+
   '@rollup/rollup-android-arm-eabi@4.30.0':
     resolution: {integrity: sha512-qFcFto9figFLz2g25DxJ1WWL9+c91fTxnGuwhToCl8BaqDsDYMl/kOnBXAyAqkkzAWimYMSWNPWEjt+ADAHuoQ==}
     cpu: [arm]
@@ -275,6 +284,9 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
+  '@types/node@22.10.5':
+    resolution: {integrity: sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==}
+
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
 
@@ -322,6 +334,9 @@ packages:
     resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   vite@6.0.7:
     resolution: {integrity: sha512-RDt8r/7qx9940f8FcOIAH9PTViRrghKaK2K1jY3RaAURrEUbm9Du1mJ72G+jlhtG3WwodnfzY8ORQZbBavZEAQ==}
@@ -446,6 +461,10 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.2.1
 
+  '@lit/task@1.0.1':
+    dependencies:
+      '@lit/reactive-element': 2.0.4
+
   '@rollup/rollup-android-arm-eabi@4.30.0':
     optional: true
 
@@ -504,6 +523,11 @@ snapshots:
     optional: true
 
   '@types/estree@1.0.6': {}
+
+  '@types/node@22.10.5':
+    dependencies:
+      undici-types: 6.20.0
+    optional: true
 
   '@types/trusted-types@2.0.7': {}
 
@@ -593,10 +617,14 @@ snapshots:
 
   typescript@5.6.3: {}
 
-  vite@6.0.7:
+  undici-types@6.20.0:
+    optional: true
+
+  vite@6.0.7(@types/node@22.10.5):
     dependencies:
       esbuild: 0.24.2
       postcss: 8.4.49
       rollup: 4.30.0
     optionalDependencies:
+      '@types/node': 22.10.5
       fsevents: 2.3.3
