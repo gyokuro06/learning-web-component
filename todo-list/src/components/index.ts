@@ -1,1 +1,1 @@
-export * from "./todo-list.ts";
+export * from "./todo-list.tsx";
