@@ -1,6 +1,6 @@
 import { html, LitElement } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
-import { listTodoItemsStyles, todoListStyles } from "./styles";
+import { cardTodoItemsStyles, listTodoItemsStyles, todoListStyles } from "./styles";
 import { Task } from "@lit/task";
 
 type DisplayMode = 'list' | 'card';
@@ -75,6 +75,8 @@ class ListTodoItems extends LitElement {
 
 @customElement('card-todo-items')
 class CardTodoItems extends LitElement {
+  static styles = cardTodoItemsStyles;
+
   @state()
   private _items?: TodoItem[];
 
@@ -85,12 +87,12 @@ class CardTodoItems extends LitElement {
   render() {
     return html`
       <div>
-        <div className="card">
+        <div class="card">
         ${this._items?.map(i => html`
-          <div class="content">
+          <label class="card-content">
             <input type="checkbox" ?checked=${i.status === 'completed'}>
             <span>${i.text}</span>
-          </div>`)}
+          </label>`)}
         </div>
         <slot @change=${this._onChange}>
           <default-todo-items></default-todo-items>
